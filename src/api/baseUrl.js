@@ -2,7 +2,7 @@ import axios from "axios"
 import { getXsrf } from "../localStorage";
 
 export const baseURL = axios.create({
-  baseURL: " /api",
+  baseURL: "https://l8-upgrade-apis.vercel.app/api",
   headers:{
     "Content-type": "application/json",
   },

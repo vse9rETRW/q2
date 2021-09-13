@@ -1,10 +1,11 @@
-import Login from './views/Login';
 import './App.sass';
 import React from 'react';
 import { getXsrf } from './localStorage';
 
 import { renderRoutes } from "react-router-config";
 import {Redirect} from 'react-router';
+
+import NavBar from './components/NavBar';
 
 const App = props => {
   const { route, history } = props
@@ -25,8 +26,13 @@ const App = props => {
             </div>
           </div>
         </div>
-        <div className="m-top__24 m-left__32">
-          {renderRoutes(route.routes)}
+        <div className="flex index-content">
+          <div className="index-content__right-side">
+            <NavBar routes={route.routes} />
+          </div>
+          <div>
+            {renderRoutes(route.routes)}
+          </div>
         </div>
       </div> :
       <Redirect to="/login" />
